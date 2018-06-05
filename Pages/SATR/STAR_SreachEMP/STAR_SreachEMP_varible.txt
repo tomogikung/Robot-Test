@@ -1,0 +1,13 @@
+*** Variables ***
+${txt_sreachEMP}    //*[@id="data"]
+${btn_sreach}     //*[@id="about"]/form/div/div/div/div[2]/button
+${div_emp}        //*[@id="about"]/div/a/div/div/div
+${Emp_ID}         580790004
+${Emp_name}       อาทร
+${Emp_Nickname}    อาร์ม
+${Full_Divition_Name}    ฝ่ายเทคโนโลยีและสารสนเทศ
+${Short_Divition_Name}    ICT
+${DepartmentName}    พัฒนาซอฟต์แวร์
+${Star_Sreach_Emp_Page}    http://192.168.10.98/BBQIntra/HRM/star
+${Star_Icon}      /html/body/div/header/nav/div/ul/li[1]/a
+${Emp_ID_New}     580790004

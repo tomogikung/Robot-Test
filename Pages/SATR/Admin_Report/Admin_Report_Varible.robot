@@ -1,0 +1,24 @@
+*** Variables ***
+${select_Report_type}    //*[@id="resivetype"]
+${txt_Report_Emp_ID}    //*[@id="empID"]
+${txt_Report_Emp_Name}    //*[@id="empName"]
+${select_Section}    //*[@id="detailzone"]/div[1]/div[2]/span/div/button
+${select_Division}    //*[@id="empDevition"]
+${select_Department}    //*[@id="empDepartment"]
+${select_Position}    //*[@id="empPosition"]
+${select_Team}    //*[@id="team"]
+${select_Star_Type}    //*[@id="typestar"]
+${select_Zone}    //*[@id="zone_star"]
+${select_Sub_Zone}    //*[@id="zone2_star"]
+${Dummy_EmpID}    580490003
+${Dummy_Emp_Name}    อาทร
+${URL_Admin_Report_Page}    http://192.168.10.98/BBQIntra/HRM/reportadmin
+${ACTIVE_Menu}    //*[@id="Menu_106"]/a
+${Report_Admin_Menu}    //*[@id="Menu_106"]/ul/li[2]/a
+${btn_Search_admin_report}    //*[@id="bottonreport"]
+${Result_Resive_Search_EmpID}    //*[@id="tbl_active"]/tbody/tr[1]/td[3]/center
+${Reult_Resive_Search_Section}    //*[@id="tbl_active"]/tbody/tr[1]/td[6]/center
+${select_Section_Option_1}    //*[@id="detailzone"]/div[1]/div[2]/span/div/ul/li[5]/a/label
+${select_Section_Option_2}    //*[@id="detailzone"]/div[1]/div[2]/span/div/ul/li[3]/a/label
+${Dummy_Emp_Nickname}    อาร์ม
+${Dummy_Emp_Last_Name}    คำเต่ย

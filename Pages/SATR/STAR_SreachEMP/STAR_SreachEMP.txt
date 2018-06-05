@@ -1,0 +1,83 @@
+*** Settings ***
+Resource          STAR_SreachEMP_varible.txt
+Resource          ../../../Import.robot
+
+*** Keywords ***
+Sreach Employee With EmpID : ${Emp_ID} Success Case
+    [Documentation]    Input test data to input text for sreach emp data
+    Wait Until Element Is Visible    xpath=.${txt_sreachEMP}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    ${Emp_ID_New}
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ${Emp_ID_New}    timeout=${Wait_timeout}
+
+Sreach Employee With EmpID : ${Emp_ID} Fail Case
+    [Documentation]    Input test data to input text for sreach emp data
+    Wait Until Element Is Visible    xpath=.${txt_sreachEMP}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    581292225
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ไม่พบข้อมูล    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Frist Name : ${Emp_name} Success Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    ${Emp_name}
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ${Emp_name}    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Frist Name : ${Emp_name} Fail Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    Noname
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ไม่พบข้อมูล    timeout=${Wait_timeout}
+
+Go To Star Page With URL : ${Star_Sreach_Emp_Page}
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Click Element    xpath=.${Star_Icon}
+    Wait Until Page Contains    ค้นหาข้อมูลเพื่อให้ STAR
+
+Sreach Employee With Emp Nick Name : ${Emp_Nickname} Success Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    ${Emp_Nickname}
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ${Emp_ID}    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Nick Name : ${Emp_Nickname} Fail Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    Noname
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ไม่พบข้อมูล    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Full Name Division : ${Full_Divition_Name} Success Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    ${Full_Divition_Name}
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ${Emp_ID}    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Full Name Division : ${Full_Divition_Name} Fail Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    NoDivisionName
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ไม่พบข้อมูล    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Short Name Division : ${Short_Divition_Name} Success Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    ${Short_Divition_Name}
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ${Emp_ID}    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Short Name Division : ${Short_Divition_Name} Fail Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    No Short Division Name
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ไม่พบข้อมูล    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Short Departmaent : ${DepartmentName} Success Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    ${DepartmentName}
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ${Emp_ID}    timeout=${Wait_timeout}
+
+Sreach Employee With Emp Short Departmaent : ${DepartmentName} Fail Case
+    Wait Until Element Is Visible    xpath=.${Star_Icon}    timeout=${Wait_timeout}
+    Input Text    xpath=.${txt_sreachEMP}    No Department Name
+    Click Element    xpath=.${btn_sreach}
+    Wait Until Page Contains    ไม่พบข้อมูล    timeout=${Wait_timeout}
